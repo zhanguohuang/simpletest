@@ -75,7 +75,7 @@
  <root>
 <!--  priority配置输出日志级别 -->
   <priority value="info" /> 
-  <appender-ref ref="console" />
+ <!--  <appender-ref ref="console" /> -->
   <appender-ref ref="info.log" />
   <appender-ref ref="debug.log" />
   <appender-ref ref="warn.log" />
