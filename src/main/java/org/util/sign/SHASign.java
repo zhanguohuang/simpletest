@@ -55,11 +55,4 @@ public class SHASign {
 		}
 		return "";
 	}
-	 
-	public static void main(String[] args) {
-		System.out.println(SHA1("1234561476245458324696978"));
-	}
 }
-/**
- * a5865854374c8460861d731c6731accac073228b
- */
