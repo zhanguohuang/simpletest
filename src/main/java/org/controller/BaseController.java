@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -117,7 +117,7 @@ public class BaseController{
 			logger.info("getOpenId error : code is null");
 			return;
 		}
-		HttpClient httpClient = HttpClients.createDefault();
+		HttpClient httpClient = new DefaultHttpClient();
 		String reqUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx6221492b29f89319"
 				+ "&secret=35411638d7b9f0292b9705463481831f&code=" + reqMap.get("code") 
 				+ "&grant_type=authorization_code";
