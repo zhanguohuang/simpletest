@@ -17,4 +17,6 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd"
 	default-autowire="byName">
 	<context:component-scan base-package="org" />
+	
+	<bean id="testService" class="org.service.impl.TestServiceImpl"/>
 </beans>
