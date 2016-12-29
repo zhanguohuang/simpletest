@@ -33,5 +33,5 @@
 	
  	<!-- 扫描web包，应用Spring的注解 @Controller -->
 	<context:component-scan base-package="org.controller" />
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven />
 </beans>
