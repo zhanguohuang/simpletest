@@ -34,6 +34,17 @@
   		<artifactId>spring-webmvc</artifactId>
   		<version>4.2.0.RELEASE</version>
   	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-jms -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jms</artifactId>
+	    <version>4.2.0.RELEASE</version>
+	</dependency>
+	<dependency>
+    <groupId>org.apache.activemq</groupId>
+	    <artifactId>activemq-all</artifactId>
+	    <version>5.14.0</version>
+	</dependency>
   	 <!-- jsp -->
   	<dependency>
   		<groupId>javax.servlet</groupId>
