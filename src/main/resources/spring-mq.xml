@@ -22,10 +22,18 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd"
 	default-autowire="byName">
 	
-	<!-- <import resource="spring-rmi.xml"/>
-	<import resource="spring-mq.xml"/>
-	<import resource="spring-dubbo.xml"/> -->
+	<bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory" />
+
+	<bean id="queue" class="org.apache.activemq.command.ActiveMQQueue" c:_="spitter.queue" />
 	
-	<context:component-scan base-package="org.service" />
+	<bean id="topic" class="org.apache.activemq.command.ActiveMQTopic" c:_="spitter.topic" />
+
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate" 
+		c:_-ref="connectionFactory" 
+		p:defaultDestinationName="spittle.alert.queue" />
+	
+	<jms:listener-container connection-factory="connectionFactory">
+		<jms:listener destination="spittle.alert.queue" ref="spittleAlertHandler" method="handleSpittleAlert" />
+	</jms:listener-container>
 	
 </beans>

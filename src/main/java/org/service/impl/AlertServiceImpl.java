@@ -13,7 +13,7 @@ import org.springframework.jms.core.MessageCreator;
 import org.springframework.jms.support.JmsUtils;
 import org.springframework.stereotype.Service;
 
-@Service("alertService")
+//@Service("alertService")
 public class AlertServiceImpl implements AlertService {
 
 	private JmsOperations jmsOperations;

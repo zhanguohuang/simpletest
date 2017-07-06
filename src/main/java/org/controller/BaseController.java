@@ -163,5 +163,14 @@ public class BaseController{
 		}
 		logger.info("----获取请求的参数结束----");
 	}
+	
+	@RequestMapping("/helloworld")
+	public void hello(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			response.getWriter().write("hello world!hello");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

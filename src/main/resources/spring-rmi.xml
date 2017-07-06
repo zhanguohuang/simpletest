@@ -22,10 +22,16 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd"
 	default-autowire="byName">
 	
-	<!-- <import resource="spring-rmi.xml"/>
-	<import resource="spring-mq.xml"/>
-	<import resource="spring-dubbo.xml"/> -->
-	
-	<context:component-scan base-package="org.service" />
+	<bean id="testServiceExporter" class="org.springframework.remoting.rmi.RmiServiceExporter">  
+       <property name="service" ref="testService"/>  
+       <property name="serviceName" value="uri"/>  
+       <property name="serviceInterface" value="org.service.TestService"/>  
+       <property name="registryPort" value="2016"/>  
+    </bean>
+    
+    <bean name="getRmiService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">  
+		<property name="serviceUrl" value="rmi://127.0.0.1:2016/uri"/>  
+		<property name="serviceInterface" value="org.service.TestService"/>  
+    </bean>	
 	
 </beans>
